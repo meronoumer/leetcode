@@ -19,19 +19,14 @@ class Solution(object):
 
         O(n) 
         """
-        answer=[]
-        
-        for num in range(1,n+1):
-            key = num
-            if num%3==0:
-                key="Fizz"
-                if num%5==0:
-                    key+="Buzz"
-            elif num%5==0:
-                print(num)
-                key="Buzz"
+        answer = []
+        for i in range(1, n + 1):
+            if i % 15 == 0:
+                answer.append("FizzBuzz")
+            elif i % 3 == 0:
+                answer.append("Fizz")
+            elif i % 5 == 0:
+                answer.append("Buzz")
             else:
-                key = str(key)
-
-            answer.append(key)
+                answer.append(str(i))
         return answer
