@@ -36,7 +36,7 @@ class Solution(object):
         #  then finally return truncated version
         val_arr = []
         for key, count in dict.items():
-            val_arr.append([count, key])  # ← keep frequency!
+            val_arr.append([count, key])  
 
         val_arr.sort(reverse=True)
 
