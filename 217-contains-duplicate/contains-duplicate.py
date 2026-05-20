@@ -35,22 +35,30 @@ class Solution:
                         ret False
 
         """
-        seen = {}
+        # seen = {}
+        # for num in nums:
+        #     if num in seen:
+        #         seen[num]+=1
+        #     else:
+        #         seen[num]=1
+        
+        # print(seen)
+        # for key,value in seen.items():
+        #     print(value)
+        #     if value>1:
+        #         print(value)
+        #         return True
+        #     else:
+        #         continue
+        
+        # return False
+        seen = set()
         for num in nums:
             if num in seen:
-                seen[num]+=1
-            else:
-                seen[num]=1
-        
-        print(seen)
-        for key,value in seen.items():
-            print(value)
-            if value>1:
-                print(value)
                 return True
             else:
-                continue
-        
+               seen.add(num)
         return False
+
 
         
