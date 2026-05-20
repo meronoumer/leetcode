@@ -1,31 +1,55 @@
-class Solution(object):
-    def containsDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
         """
 
-        """
-        input =  arr has ints
+        go through an array 
 
-            return t = if val repeats
-            return f = if every val is once
 
-        iterating 
 
-            for loop thru arr
-                - vals, indices = enumarate()
-            - hashmap for val,indice pairs - for checking later 
-            O(n)
+        return true
+         - if theres any value that appears more than once in the array
+        /false
+            - if all elems appear once/singularly in the array
+
+        
+        -go through the array  = for loop
+        initialize a dictionary seen= {}
+        for each element set add it into the dict as key seen[key]=1
+                         - add in its 1(no of times it appears) as a value
+
+                                alr. seen element
+                                    - increment that value by 1 of element b y1
+                                if el in seen:
+                                    seen[key]+=1
+                                else:
+                                    seen[key]=1
+
+
+        
+        2nd half
+            - check if there are any elements with value >1 in the dictionary
+            for elem in seen:
+                if seen[elem]>1
+                    ret True
+                else:
+                        ret False
 
         """
         seen = {}
-        for index,num in enumerate(nums):
-            seen[num] = index
+        for num in nums:
+            if num in seen:
+                seen[num]+=1
+            else:
+                seen[num]=1
         
-        for index,num in enumerate(nums):
-            if num in seen and seen[num]!=index:
+        print(seen)
+        for key,value in seen.items():
+            print(value)
+            if value>1:
+                print(value)
                 return True
+            else:
+                continue
         
         return False
 
