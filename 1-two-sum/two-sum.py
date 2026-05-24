@@ -9,6 +9,14 @@ class Solution:
         output = 
             - indices of the two addennds
 
+        
+        ind, num
+             = hashmap
+        
+        
+        
+
+
             -
 
         """
