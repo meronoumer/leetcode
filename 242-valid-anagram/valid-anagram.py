@@ -17,6 +17,8 @@ class Solution:
             - compare the two hashmaps to eachother 
             
         """
+        if len(s)!=len(t):
+            return False
         s_dict = {}
         for char in s:
             if char not in s_dict:
