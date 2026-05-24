@@ -1,8 +1,8 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
 
-        s = "".join(sorted(s))
-        t = "".join(sorted(t))
+        # s = "".join(sorted(s))
+        # t = "".join(sorted(t))
 
         """
         input = strings 1 and 2 
