@@ -19,4 +19,5 @@ class Solution:
                 return seen[sub],ind
             else:
                 seen[num]=ind
+        return {}
         
