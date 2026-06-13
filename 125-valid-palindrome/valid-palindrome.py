@@ -48,21 +48,44 @@ class Solution(object):
                     or at right is not alpha numeric :
                     decremeent by one
         """
-        s = s.lower()
+        # s = s.lower()
 
-        start = 0
-        end = len(s)-1
-        while start<end:
-            if not s[start].isalnum():
-                start+=1
-                continue
-            elif not s[end].isalnum():
-                end-=1
-                continue
-            if s[start]!=s[end]:
+        # start = 0
+        # end = len(s)-1
+        # while start<end:
+        #     if not s[start].isalnum():
+        #         start+=1
+        #         continue
+        #     elif not s[end].isalnum():
+        #         end-=1
+        #         continue
+        #     if s[start]!=s[end]:
+        #         return False
+        #     else:
+        #         start += 1
+        #         end -= 1
+        # return True
+        
+
+
+
+
+
+
+        cleaned = ""
+        for char in s:
+
+            if char.isalnum():
+                cleaned+=char.lower()
+        print(cleaned)
+        # print("printing")
+        left = 0
+        right = len(cleaned)-1
+
+        while left<right:
+            if cleaned[left]!=cleaned[right]:
                 return False
             else:
-                start += 1
-                end -= 1
+                left+=1
+                right-=1
         return True
-        
