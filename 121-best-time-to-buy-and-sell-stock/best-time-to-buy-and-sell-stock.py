@@ -4,59 +4,53 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
 
+        - input = arr = prices 
+                        - at index i , = val = how much neetcoin goes for each day 
+                                        (the price at that day)
+
+        -output = max possible profit
+                    - d/c
+                     - smallest earlier date/largest later date
+                     where largest should not be less than smallest
+        goal :  look at the prices of neetcoin at each day 
+                - track the difference between the price at this day and a day afterr 
+                have the profit var init 
+                take the difference
+
+                have the maximum between the var and the ifferemce and uodate ti that 
 
 
-        - input = arr of prices 
-        - pck one day to buy one stock 
-        - pick different day to sell that stock 
+                how we can check every single combo 
+                    - b.f = nested for lop and check for each a , then all bs etc
+                
 
-        find max profit 
-            - we're tracking for two things 
-            so we want a two sized moving window
-                that's going to subtract those two numbers = store that 
-                init max_prof = 6
-
-
-
-                    - no sort - pos matters
-        return it 
-            or if no max 
-                - return 0c
-                    case
-                        - if the prices earlier are higher than th eprices later 
-                                = loss selling for lower than it was bought
-
-        day we buy
-            - 7
-            if diff is negative 
-                no sell 
-                check next
-
-                brute force
-                    - grab one 
-                        run comparisions for all across the board 
-        left = 
-        rght = end of arr
-        min_price = prices[0]
-        max_profit = 0
+                we can have two ptrs
+                    - at start 
+                    and then 1 next to it 
+                    if the second one i slarger than the first one then 
+                        skip ths combo
+                            - means move left 
+                            - move right 
+                    else:
+                        take their dfference
+                        updat our max_var with the max between max var and difference 
+                        only increment right
+                        continue the loop = first pont not past the end
         """
-        # min_price = prices[0]
-        max_profit = 0
+        left = 0
+        right = 1
+        max_diff = 0
 
-        buy_day = 0
-        sell_day = 1
-
-        while sell_day<len(prices):
-            if prices[buy_day]<prices[sell_day]:
-                profit = prices[sell_day]-prices[buy_day]
-                max_profit = max(profit,max_profit)
+        while right<len(prices):
+            print(left,right)
+            if prices[left]>prices[right]:
+                left=right
+                right+=1
             else:
-                buy_day = sell_day
+                diff = prices[right]-prices[left]
+                max_diff = max(max_diff,diff)
+                right+=1
+        return max_diff
+          
 
-
-            sell_day+=1
-        
-        return max_profit
-
-
-        
+      
