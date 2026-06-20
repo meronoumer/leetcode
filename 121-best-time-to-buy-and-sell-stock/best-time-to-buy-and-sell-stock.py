@@ -42,7 +42,6 @@ class Solution(object):
         max_diff = 0
 
         while right<len(prices):
-            print(left,right)
             if prices[left]>prices[right]:
                 left=right
                 right+=1
