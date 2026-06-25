@@ -37,14 +37,28 @@ class Solution(object):
 
 
         """
-        seen = set()
-        curr = head
-        while curr:
-            if curr in seen:
+        # seen = set()
+        # curr = head
+        # while curr:
+        #     if curr in seen:
+        #         return True
+        #     else:
+        #         seen.add(curr)
+        #         curr = curr.next
+        
+        # return False
+        """
+        two pointer
+            slow = 
+            fast
+
+        """
+        slow ,fast = head,head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow==fast:
                 return True
-            else:
-                seen.add(curr)
-                curr = curr.next
-        
+  
+                
         return False
-        
