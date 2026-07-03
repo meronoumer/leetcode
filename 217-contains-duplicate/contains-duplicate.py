@@ -1,63 +1,55 @@
-class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+class Solution(object):
+    def containsDuplicate(self, nums):
         """
-
-        go through an array 
-
-
-
-        return true
-         - if theres any value that appears more than once in the array
-        /false
-            - if all elems appear once/singularly in the array
-
-        
-        -go through the array  = for loop
-        initialize a dictionary seen= {}
-        for each element set add it into the dict as key seen[key]=1
-                         - add in its 1(no of times it appears) as a value
-
-                                alr. seen element
-                                    - increment that value by 1 of element b y1
-                                if el in seen:
-                                    seen[key]+=1
-                                else:
-                                    seen[key]=1
+        :type nums: List[int]
+        :rtype: bool
 
 
-        
-        2nd half
-            - check if there are any elements with value >1 in the dictionary
-            for elem in seen:
-                if seen[elem]>1
-                    ret True
-                else:
-                        ret False
+        -   input - array of ints = nums
+        - output - 
+            t : if any val appears 2x or> in the array
+            f : if all vals appear 1 time
+        goal 
+            - look at 2 things = HASHSET/DICT
+                - val
+                    - 
+                - freq
+            init dict
+            counter init =0 - here no reset
+            traverse through nums 
+                
+                for each key add it to our dict
+                    - add its counter 
+                        - if key in dct:
+                            count+=1
+                                - ret tru?
+
+                        else:
+                            counter =0
+                            count+=1
+                            addk v to dict
+
+            go through dict again 
+                - if any vals are greater than 1 
+                    - for val in dict.values)-list
+                        if val>1:
+                            ret twu
+                    ret false
 
         """
-        # seen = {}
-        # for num in nums:
-        #     if num in seen:
-        #         seen[num]+=1
-        #     else:
-        #         seen[num]=1
-        
-        # print(seen)
-        # for key,value in seen.items():
-        #     print(value)
-        #     if value>1:
-        #         print(value)
-        #         return True
-        #     else:
-        #         continue
-        
-        # return False
-        seen = set()
+        counter = 0
+        seen = {}
         for num in nums:
             if num in seen:
+                counter+=1
+                seen[num]=counter
                 return True
-            seen.add(num)
+            else:
+                counter = 0
+                counter+=1
+                seen[num]=counter
         return False
 
 
+        
         
