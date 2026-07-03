@@ -37,7 +37,6 @@ class Solution(object):
                     ret false
 
         """
-        counter = 0
         seen = set()
         for num in nums:
             if num in seen:
