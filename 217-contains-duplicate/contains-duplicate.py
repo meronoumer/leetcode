@@ -41,8 +41,8 @@ class Solution(object):
         seen = {}
         for num in nums:
             if num in seen:
-                counter+=1
-                seen[num]=counter
+                # counter+=1
+                # seen[num]=counter
                 return True
             else:
                 counter = 0
