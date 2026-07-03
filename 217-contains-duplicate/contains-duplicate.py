@@ -38,16 +38,14 @@ class Solution(object):
 
         """
         counter = 0
-        seen = {}
+        seen = set()
         for num in nums:
             if num in seen:
                 # counter+=1
                 # seen[num]=counter
                 return True
             else:
-                counter = 0
-                counter+=1
-                seen[num]=counter
+                seen.add(num)
         return False
 
 
